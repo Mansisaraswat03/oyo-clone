@@ -26,4 +26,34 @@ export const block =[
     },
 ]
 
+export const list=[
+    {
+        name:"Bangalore",
+    },
+    {
+        name:"Chennai",
+    },
+    {
+        name:"Delhi",
+    },
+    {
+        name:"Gurgaon",
+    },
+    {
+        name:"Hyderabad",
+    },
+    {
+        name:"Kolkata",
+    },
+    {
+        name:"Mumbai",
+    },
+    {
+        name:"Noida",
+    },
+    {
+        name:"Pune",
+    }
+]
+
 
