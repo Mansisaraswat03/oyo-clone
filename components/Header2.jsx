@@ -1,4 +1,4 @@
-import { list } from "@/pages/data/data"
+import { list } from "@/lib/data/data"
 import { ChevronDown } from 'lucide-react';
 const Header2 = () => {
   return (

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link"
 import Block from "./Block";
-import { block } from "@/pages/data/data";
+import { block } from "@/lib/data/data";
 import { User } from 'lucide-react';
 const Header1 = () => {
   return (
