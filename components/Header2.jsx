@@ -16,7 +16,7 @@ const Header2 = () => {
           </div>
         ))}
         <div className="flex items-center hover:text-red-500 cursor-pointer">
-          All Cities <ChevronDown/>
+          All Cities
         </div>
       </div>
     </div>
