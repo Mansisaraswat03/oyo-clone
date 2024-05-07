@@ -1,5 +1,5 @@
 import React from 'react';
-const Block = ({title,para,icon}) => {
+ const Block = ({title,para,icon}) => {
   return (
     <div className=" border-r border-gray-300 w-60 flex items-center gap-2 cursor-pointer px-3">
       {icon}
@@ -12,5 +12,4 @@ const Block = ({title,para,icon}) => {
     </div>
   )
 }
-
-export default Block
+export default Block;

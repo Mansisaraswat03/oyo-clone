@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-const Header3 = () => {
+ const Header3 = () => {
     const [city, setCity] = useState(" ");
   return (
     <div className=" bg-gradient-to-r from-green-800 to-green-400 h-60">
@@ -54,5 +54,4 @@ const Header3 = () => {
     </div>
   )
 }
-
-export default Header3
+ export default Header3;

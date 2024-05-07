@@ -1,6 +1,6 @@
 import { list } from "@/lib/data/data"
 import { ChevronDown } from 'lucide-react';
-const Header2 = () => {
+export const Header2 = () => {
   return (
     <div>
       <div className='hidden md:flex gap-16  h-10 justify-center px-5 bg-gray-100'>
@@ -22,5 +22,3 @@ const Header2 = () => {
     </div>
   )
 }
-
-export default Header2

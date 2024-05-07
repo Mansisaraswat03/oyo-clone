@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Header4 = () => {
+ const Header4 = () => {
   return (
     <div className="flex flex-col items-center gap-4 py-6">
       <Image src="/1.png" height={800} width={800} alt="banner" className="w-11/12 "/>
@@ -10,4 +10,4 @@ const Header4 = () => {
   )
 }
 
-export default Header4
+export default Header4;

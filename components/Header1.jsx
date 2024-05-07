@@ -6,7 +6,7 @@ import Block from './Block';
 import { block } from '@/lib/data/data';
 import { User, Menu } from 'lucide-react';
 
-const Header1 = () => {
+export const Header1 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -14,7 +14,7 @@ const Header1 = () => {
   };
 
   return (
-    <div className="border-b-2 border-gray-300">
+    <div className="border-b-2 border-gray-300 bg-white">
       <div className="flex justify-between items-center h-20 md:px-10">
         <Image src="/oyo.png" alt="logo" width={200} height={200} className="w-28 h-28" />
         <div className="hidden lg:flex h-full">
@@ -43,5 +43,3 @@ const Header1 = () => {
     </div>
   );
 };
-
-export default Header1;
