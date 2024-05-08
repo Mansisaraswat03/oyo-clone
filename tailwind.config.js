@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage:{
+        "login-background":'url("/background.avif")'
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
