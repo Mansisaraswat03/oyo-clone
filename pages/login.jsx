@@ -30,9 +30,9 @@ const Login = () => {
         <title>OYO - Login !</title>
       </Head>
       <div className="flex flex-col lg:flex-row h-screen justify-center items-center relative bg-login-background bg-no-repeat bg-cover opacity-85">
-        <div className="hidden absolute lg:top-10 lg:left-10 lg:flex items-center text-white">
-          <h2 className="text-5xl font-bold mr-5">OYO</h2>
-          <p className="font-bold text-2xl">
+        <div className="hidden absolute lg:top-10 lg:left-10 lg:flex items-center ">
+          <h2 className="text-5xl font-extrabold mr-5">OYO</h2>
+          <p className="font-bold text-2xl text-white">
             Hotels and homes across 800 cities, 24+ countries
           </p>
         </div>
@@ -85,7 +85,9 @@ const Login = () => {
               </button>
               <p className="my-1 text-xl">
                 <span>
-                  {login ? "Don't have an account?" : "Already have an account?"}
+                  {login
+                    ? "Don't have an account?"
+                    : "Already have an account?"}
                 </span>
                 <span
                   className="ml-1 border-b-2 border-red-500 text-red-600 pb-1 hover:cursor-pointer"

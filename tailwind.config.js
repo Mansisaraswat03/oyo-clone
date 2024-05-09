@@ -20,6 +20,9 @@ module.exports = {
       backgroundImage:{
         "login-background":'url("/background.avif")'
       },
+      height:{
+        'large-box':'400px'
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
