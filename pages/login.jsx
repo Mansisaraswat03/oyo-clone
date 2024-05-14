@@ -1,3 +1,4 @@
+"use client";
 import Head from "next/head";
 import { useState } from "react";
 import axios from "axios";
@@ -13,7 +14,16 @@ const Login = () => {
   const router = useRouter();
 
   const handleSignup = async () => {
-    // Signup logic
+    const res = await axios.post(`/api/user/register`, {
+      name,
+      email,
+      password,
+    });
+    if (res?.data) {
+      Cookies.set("user", res.data.token, { expires: 7 });
+      alert(res.data.msg);
+      router.back();
+    }
   };
 
   const handleToggle = () => {
@@ -21,7 +31,15 @@ const Login = () => {
   };
 
   const handleLogin = async () => {
-    // Login logic
+    const res =await axios.post(`/api/user/login`,{
+      email,
+      password
+    });
+    if(res?.data){
+      Cookies.set("user", res.data.token,{ expires: 7 });
+     alert(res.data.msg);
+     router.back();
+    }
   };
 
   return (

@@ -47,9 +47,11 @@ const ViewDetail = () => {
               Laundary
             </li>
           </ul>
-          <button className="bg-red-400 text-lg w-60 h-14 rounded-lg my-5">
+          <div className="flex justify-center my-10">
+          <button className="bg-red-400 text-lg w-60 h-14 rounded-lg">
             Book Now
           </button>
+          </div>
         </div>
       </div>
     </>
