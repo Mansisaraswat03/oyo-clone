@@ -9,11 +9,11 @@ import { useState } from "react";
         <h2 className=" text-4xl text-white text-center font-bold">
           Over 174,000 hotels and homes across 35+ countries
         </h2>
-        <div className="grid grid-cols-5 my-5 mx-20">
+        <div className="flex justify-center my-5 mx-20">
           <input
             type="text"
             placeholder="Search by city, hotel, or neighbourhood"
-            className=" col-span-2 h-14 outline-none px-3 text-lg border-r-2 border-gray-400 "
+            className=" col-span-2 h-14 w-1/3 outline-none px-3 text-lg border-r-2 border-gray-400 "
             onChange={(e) => {
               setCity(e.target.value);
             }}
@@ -24,11 +24,11 @@ import { useState } from "react";
             className="h-14 outline-none px-3 text-lg border-r-2 border-gray-400 col-span-1"
           />
           
-          <input
+          {/* <input
             type="text"
             placeholder="1Room, 1Guest"
             className="h-14 outline-none px-3 text-lg border-r-2 border-gray-400 col-span-1"
-          />
+          /> */}
           <button
             type="submit"
             className=" h-14 px-3 py-2 w-32 col-span-1 bg-gray-400 hover:cursor-pointer hover:bg-gray-600 text-white text-xl"

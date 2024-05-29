@@ -1,15 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 
-const ViewDetail = () => {
+const ViewDetail = ({hotels}) => {
   return (
     <>
       <Head>
-        <title>OYO - View Details</title>
+        <title>{hotels?.name}</title>
       </Head>
-      <div className="m-5 w-8/12 mx-auto my-10">
+      <div className="m-5 w-10/12 mx-auto my-10">
         <Image
-          src="/hotel-3.avif"
+          src={hotels?.banner}
           width={4000}
           height={4000}
           alt="hotel"
@@ -17,37 +17,25 @@ const ViewDetail = () => {
         />
         <div className="w-full">
           <h3 className="font-bold text-3xl">
-            Super OYO 822815 Indian Residency, Near Adams Academy, Kadugodi
+          {hotels?.name}
           </h3>
           <p className="my-5 text-xl text-justify">
-            It is located near Tiantan Park, just a 10-minute walk from the
-            National Center for the Performing Arts and Tian'anmen Square. Built
-            in 1956 it has old school charm and many rooms still feature high,
-            crown-molded ceilings. A 2012 renovation brought all rooms and
-            services up to modern day scratch and guestrooms come equipped with
-            free Wi-Fi and all the usual amenities required for a comfortable
-            stay.
+            {hotels?.description}
           </p>
-          <button className="bg-blue-400 text-lg w-60 h-14 rounded-lg">
-            Price :1200
-          </button>
           <p className="text-3xl font-bold my-5">Facilities :</p>
           <ul className="text-xl flex flex-col lg:flex-row lg:justify-between gap-2 lg:gap-5">
-            <li className="hover:text-blue-400 hover:cursor-pointer">
-              Swimming
-            </li>
-            <li className="hover:text-blue-400 hover:cursor-pointer">
-              Beaches
-            </li>
-            <li className="hover:text-blue-400 hover:cursor-pointer">
-              Restaurant
-            </li>
-            <li className="hover:text-blue-400 hover:cursor-pointer">Wifi</li>
-            <li className="hover:text-blue-400 hover:cursor-pointer">
-              Laundary
-            </li>
+          {
+            hotels ? hotels?.facilities?.map((facility) => {
+              return (<li className="flex items-center gap-4 hover:text-blue-400 hover:cursor-pointer" key={facility}>
+             <Image src={facility.img} width={30} height={30} alt="icon"/> {facility.name}
+            </li>) 
+          }) : ""
+          }
           </ul>
-          <div className="flex justify-center my-10">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-5 my-10">
+          <button className="bg-blue-400 text-lg w-60 h-14 rounded-lg">
+            Price : &#8377;{hotels?.price}
+          </button>
           <button className="bg-red-400 text-lg w-60 h-14 rounded-lg">
             Book Now
           </button>
@@ -58,4 +46,22 @@ const ViewDetail = () => {
   );
 };
 
+
+
+
+export async function getServerSideProps(ctx) {
+  const res = await fetch(`${process.env.BASE_URL}/api/hotels/${ctx.query.id}`)
+  const data = await res.json()
+  console.log(data);
+  return {
+    props: {
+      hotels : data.hotels
+    }
+  }
+}
+
+
 export default ViewDetail;
+
+
+
