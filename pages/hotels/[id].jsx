@@ -1,7 +1,33 @@
+"use client";
 import Head from "next/head";
 import Image from "next/image";
+import Cookies from "js-cookie";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const ViewDetail = ({hotels}) => {
+  const [auth, setAuth] = useState(false);
+ const route = useRouter();
+  useEffect(() => {
+    const key = Cookies.get("user");
+    if (key) {
+      setAuth(true);
+      return;
+    }
+    setAuth(false);
+  }, [auth]);
+
+  const handleButton = () => {
+if (auth) {
+route.push(`/book`);
+return;
+  }
+  else{
+    alert("Please login first");
+    route.push(`/login`);
+  }
+}
   return (
     <>
       <Head>
@@ -36,7 +62,7 @@ const ViewDetail = ({hotels}) => {
           <button className="bg-blue-400 text-lg w-60 h-14 rounded-lg">
             Price : &#8377;{hotels?.price}
           </button>
-          <button className="bg-red-400 text-lg w-60 h-14 rounded-lg">
+          <button className="bg-red-400 text-lg w-60 h-14 rounded-lg" onClick={handleButton}>
             Book Now
           </button>
           </div>
