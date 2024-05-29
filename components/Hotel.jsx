@@ -37,7 +37,7 @@ const Hotel = ({ hotel }) => {
           </p>
           <ul className="flex gap-3 lg:gap-10 mb-3">
               {hotel
-                ? hotel.facilities.map((item,index) => {
+                ? hotel.facilities.map((item) => {
                     return <li key={item.name} className="flex gap-2" >
                       <span><Image src={item.img} alt="icon" width={40} height={40} /></span>
                       <span>{item.name}</span>

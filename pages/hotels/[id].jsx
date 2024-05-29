@@ -2,7 +2,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Cookies from "js-cookie";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
@@ -20,7 +19,7 @@ const ViewDetail = ({hotels}) => {
 
   const handleButton = () => {
 if (auth) {
-route.push(`/book`);
+route.push(`/payment/${hotels._id}`);
 return;
   }
   else{
