@@ -19,7 +19,7 @@ const ViewDetail = ({hotels}) => {
 
   const handleButton = () => {
 if (auth) {
-route.push(`/payment/${hotels._id}`);
+route.push(`/checkout/${hotels._id}`);
 return;
   }
   else{

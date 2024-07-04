@@ -76,7 +76,7 @@ export async function getServerSideProps(ctx) {
     `${process.env.BASE_URL}/api/hotels?city=${ctx.query.city}`
   );
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
   return {
     props: {
       hotels: data.hotels ? data.hotels : data.allHotels,
