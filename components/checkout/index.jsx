@@ -9,6 +9,8 @@ const amount =(hotels?.price/83.47).toFixed(2);
 const router = useRouter();
 const onApprove = (data) => {
   console.log(data);
+  router.push("/payment-success");
+  alert("Payment Successful");
 }
 
   return (
@@ -38,6 +40,7 @@ const onApprove = (data) => {
               return actions.order.create({
                 purchase_units: [
                   {
+                    description: hotels?.name,
                     amount: {
                       value: amount,
                       currency_code: "USD",
