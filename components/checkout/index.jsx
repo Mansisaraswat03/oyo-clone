@@ -34,7 +34,7 @@ const onApprove = (data) => {
           options={{ "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID }}
         >
           <PayPalButtons
-            style={{ layout: "horizontal" ,label: "pay",color: "blue",}}
+            style={{ layout: "horizontal",label: "pay",color: "blue" }}
             onApprove={onApprove}
             createOrder={(data, actions) => {
               return actions.order.create({

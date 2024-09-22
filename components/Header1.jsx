@@ -59,7 +59,7 @@ export const Header1 = () => {
                 Logout
               </h3>
             ) : (
-              <Link href="/login" className="font-bold cursor-pointer">
+              <Link id="step1" href="/login" className="font-bold cursor-pointer">
                 Login / Signup
               </Link>
             )}

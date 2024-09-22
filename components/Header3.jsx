@@ -1,15 +1,28 @@
 "use client";
 import Link from "next/link";
+import { useNextStep } from "nextstepjs";
 import { useState } from "react";
- const Header3 = () => {
-    const [city, setCity] = useState(" ");
+const Header3 = () => {
+  const [city, setCity] = useState(" ");
+  const {
+    startNextStep,
+    closeNextStep,
+    currentTour,
+    currentStep,
+    setCurrentStep,
+    isNextStepVisible,
+  } = useNextStep();
+
+  const handleStartTour = () => {
+    startNextStep("Login");
+  };
   return (
     <div className=" bg-gradient-to-r from-green-800 to-green-400 h-60">
       <div className=" p-5">
         <h2 className=" text-4xl text-white text-center font-bold">
           Over 174,000 hotels and homes across 35+ countries
         </h2>
-        <div className="flex justify-center my-5 mx-20">
+        <div id='step3' className="flex justify-center my-5 mx-20">
           <input
             type="text"
             placeholder="Search by city, hotel, or neighbourhood"
@@ -23,7 +36,7 @@ import { useState } from "react";
             placeholder="date"
             className="h-14 outline-none px-3 text-lg border-r-2 border-gray-400 col-span-1"
           />
-          
+
           {/* <input
             type="text"
             placeholder="1Room, 1Guest"
@@ -38,10 +51,11 @@ import { useState } from "react";
         </div>
         <div className="flex justify-center mx-20 my-5 font-bold">
           <button
+            onClick={handleStartTour}
             type="submit"
             className="h-16 px-3 py-2 hover:cursor-pointer text-white mr-5"
           >
-            Continue your search
+            Start Tour
           </button>
           <button
             type="submit"
@@ -50,8 +64,8 @@ import { useState } from "react";
             Homestay in India hotels
           </button>
         </div>
-      </div> 
+      </div>
     </div>
-  )
-}
- export default Header3;
+  );
+};
+export default Header3;

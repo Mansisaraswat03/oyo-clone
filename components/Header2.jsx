@@ -4,7 +4,7 @@ import Link from "next/link";
 export const Header2 = () => {
   return (
     <div>
-      <div className='hidden md:flex gap-16  h-10 justify-center px-5 bg-gray-100'>
+      <div id='step2' className='hidden md:flex gap-16  h-10 justify-center px-5 bg-gray-100'>
         {list.map((item,index)=>(
             <Link href={item.link} className="flex items-center px-1 hover:bg-white cursor-pointer" key={index}>{item.name} <ChevronDown/></Link>
         ))}
